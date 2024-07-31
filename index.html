@@ -4,9 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS\styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+    <!-- Navigation bar -->
+    <nav>
+        <header>
+            <div class="logo-icon"></div>
+        </header>
+
+        <section class="nav-container">
+            <a class="nav-item">Home</a>
+            <a class="nav-item">Our Package</a>
+            <a class="nav-item">Call Us</a>
+        </section>
+    </nav>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Main title section -->
+        <article class="main-title">
+            <header>
+                <h1>Your Trusted Travel Agent's</h1>
+            </header>
+            <p>Your happiness is our happiness.</p>
+        </article>
+
+        <!-- Slideshow section -->
+        <section class="main-content">
+            <article class="main-content-item">
+                <div>
+                    <img class="main-content-banner" src="https://img.freepik.com/free-photo/bali-pagoda-indonesia_1150-11021.jpg?t=st=1722426439~exp=1722430039~hmac=331846e4f2139592b1f0cab0828c48d5713306012bdfece9d540bea4eca690dc&w=826" />
+                    <img class="main-content-banner" src="https://img.freepik.com/free-photo/asian-woman-wearing-japanese-traditional-kimono-cherry-blossom-spring-kyoto-temple-japan_335224-129.jpg?t=st=1722426617~exp=1722430217~hmac=953af77f14839aae8fb14a1335a48944756b641dbe389ef7881a161225d74a93&w=826" />
+                    <img class="main-content-banner" src="https://img.freepik.com/free-photo/merlion-statue-cityscape-singapore_335224-666.jpg?t=st=1722426638~exp=1722430238~hmac=fe0805aa63afa572f2a6200dd1a487e961a58f4301c20df66204ceb64e68f47b&w=826" />
+                    <img class="main-content-banner" src="https://img.freepik.com/free-photo/bali-statue-temple-indonesia_1150-10999.jpg?t=st=1722426674~exp=1722430274~hmac=3b0daa348a16a196233a0499fc38ab4097715be417ed78bd5c3622ce0e5c30e0&w=826" />
+                    <img class="main-content-banner" src="https://img.freepik.com/free-photo/famous-eiffel-tower-paris-with-gorgeous-colors_268835-830.jpg?t=st=1722426791~exp=1722430391~hmac=67e272e15267fc039b0248e772027d4503ca73d6e8977c11a6a960fb9839066b&w=826" />
+                    
+                    <div class="button-container">
+                        <button onclick="plusDivs(-1)">Previous</button>
+                        <button onclick="plusDivs(1)">Next</button>
+                    </div>
+                </div>
+
+                <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+
+                    function plusDivs(n) {
+                        showDivs((slideIndex += n));
+                    }
+
+                    function showDivs(n) {
+                        var i;
+                        var imgList = document.getElementsByClassName("main-content-banner");
+                        if (n > imgList.length) slideIndex = 1;
+                        else if (n < 1) slideIndex = imgList.length;
+
+                        for (i = 0; i < imgList.length; i++) {
+                            imgList[i].style.display = "none";
+                        }
+
+                        imgList[slideIndex - 1].style.display = "block";
+                    }
+
+                    setInterval(() => {
+                        plusDivs(1);
+                    }, 3000);
+                </script>
+
+                <div>
+                    <br>
+                    <i>"Liburan jadi menyenangkan bersama Travel Agentku"</i>
+                </div>
+
+                <!-- Testimonial section -->
+                <div class="main-item">
+                    <div class="item-icon"></div>
+
+                    <div>
+                        <br>
+                        <b>Florence Hughes</b>
+                        <p>Ibu Rumah Tangga, 28</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Contact form section -->
+            <form class="contact-form" id="contactForm">
+                <h3>Contact Us</h3>
+                <p>Sales will contact you within 24 hours after receiving your information.</p>
+            
+                <div class="error" id="error-name"></div>
+                <label for="input-name">
+                    <b>Name :</b>
+                    <input type="text" id="input-name" placeholder="Your Name"/>
+                </label>
+                
+                <div class="error" id="error-email"></div>
+                <label for="input-email">
+                    <b>Email Address :</b>
+                    <input type="text" id="input-email" placeholder="Enter Your Email Here"/>
+                </label>
+                
+                <div class="error" id="error-interest"></div>
+                <label for="input-interest">
+                    <b>What are you interested in?</b>
+                    <select id="input-interest" name="interest" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Bali, Indonesia">Bali, Indonesia</option>
+                        <option value="Tokyo, Japan">Tokyo, Japan</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Bandung, Indonesia">Bandung, Indonesia</option>
+                        <option value="Surabaya, Indonesia">Surabaya, Indonesia</option>
+                        <option value="Paris, France">Paris, France</option>
+                    </select>
+                </label>
+            
+                <button type="button" onclick="formValidation();">Submit</button>
+            </form>
+        </section>
+        
+        <!-- Benefits section -->
+        <article class="benefits-section">
+            <header>
+                <h2>Why Choose Us?</h2>
+            </header>
+            <div class="benefits-list">
+                <div class="benefits-item">
+                    <h3>✈️ Expert Knowledge & Personalized Itineraries</h3>
+                    <p>Experience the ultimate in customized travel planning! Our travel experts have insider knowledge and connections to create tailor-made itineraries that perfectly match your preferences and desires. Whether you're seeking a serene beach retreat or an exhilarating city escape, we craft the perfect travel experience just for you.</p>
+                </div>
+                <div class="benefits-item">
+                    <h3>💎 Exclusive Deals & Exceptional Value</h3>
+                    <p>Unlock special rates and exclusive offers only available through us! Our insider access ensures you get the best value for your money, with unique deals and upgrades that you won’t find anywhere else. Enjoy premium experiences without breaking the bank!</p>
+                </div>
+                <div class="benefits-item">
+                    <h3>🆘 On-the-Go Support & Stress-Free Planning</h3>
+                    <p>Travel with confidence knowing that we’ve got your back! From handling unexpected issues to managing all the details of your trip, our dedicated team provides on-the-go support and stress-free planning. Focus on enjoying your journey while we take care of the rest.</p>
+                </div>
+            </div>
+        </article>
+    </main>
     
+    <!-- Sidebar with packages -->
+    <aside>
+        <article class="main-title">
+            <header>
+                <h1>Our Packages</h1>
+            </header><br><br>
+        </article>
+
+        <section class="package-list">
+            <article class="package-item">
+                <img src="https://img.freepik.com/free-photo/bali-pagoda-indonesia_1150-11021.jpg?t=st=1722426439~exp=1722430039~hmac=331846e4f2139592b1f0cab0828c48d5713306012bdfece9d540bea4eca690dc&w=826" alt="Bali, Indonesia">
+                <div class="package-info">
+                    <h2>Bali, Indonesia</h2>
+                    <p>Enjoy Bali’s stunning beaches, lush rice terraces, and vibrant culture. Relax in Ubud, explore ancient temples, and savor local cuisine.</p>
+                </div>
+            </article>
+
+            <article class="package-item">
+                <img src="https://img.freepik.com/free-photo/asian-woman-wearing-japanese-traditional-kimono-cherry-blossom-spring-kyoto-temple-japan_335224-129.jpg?t=st=1722426617~exp=1722430217~hmac=953af77f14839aae8fb14a1335a48944756b641dbe389ef7881a161225d74a93&w=826" alt="Tokyo, Japan">
+                <div class="package-info">
+                    <h2>Tokyo, Japan</h2>
+                    <p>Discover Tokyo’s blend of futuristic technology and historic temples. Explore bustling neighborhoods, indulge in world-class dining, and experience vibrant culture.</p>
+                </div>
+            </article>
+
+            <article class="package-item">
+                <img src="https://img.freepik.com/free-photo/merlion-statue-cityscape-singapore_335224-666.jpg?t=st=1722426638~exp=1722430238~hmac=fe0805aa63afa572f2a6200dd1a487e961a58f4301c20df66204ceb64e68f47b&w=826" alt="Singapore">
+                <div class="package-info">
+                    <h2>Singapore</h2>
+                    <p>Explore Singapore’s futuristic skyline, iconic Marina Bay Sands, and lush Gardens by the Bay. Enjoy diverse cuisine and vibrant neighborhoods.</p>
+                </div>
+            </article>
+
+            <article class="package-item">
+                <img src="https://img.freepik.com/free-photo/bali-statue-temple-indonesia_1150-10999.jpg?t=st=1722426674~exp=1722430274~hmac=3b0daa348a16a196233a0499fc38ab4097715be417ed78bd5c3622ce0e5c30e0&w=826" alt="Bandung, Indonesia">
+                <div class="package-info">
+                    <h2>Bandung, Indonesia</h2>
+                    <p>Relax in Bandung’s cool highlands, explore colonial architecture, and visit nearby volcanoes and tea plantations.</p>
+                </div>
+            </article>
+
+            <article class="package-item">
+                <img src="https://img.freepik.com/free-photo/famous-eiffel-tower-paris-with-gorgeous-colors_268835-830.jpg?t=st=1722426791~exp=1722430391~hmac=67e272e15267fc039b0248e772027d4503ca73d6e8977c11a6a960fb9839066b&w=826" alt="Paris, France">
+                <div class="package-info">
+                    <h2>Paris, France</h2>
+                    <p>Experience Paris with its iconic Eiffel Tower, Louvre Museum, and charming streets. Enjoy romantic Seine cruises, gourmet dining, and the vibrant atmosphere of Montmartre.</p>
+                </div>
+            </article>
+        </section>
+
+        <article class="travel-article">
+            <div class="travel-content">
+                <h4>Ready to embark on your next adventure? Contact us today and let us make your travel dreams come true! 🌍✈️</h4>
+            </div>
+        </article>
+    </aside>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <section class="footer-header">
+                <h1>Contact Us</h1>
+            </section>
+    
+            <section class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Address</h3>
+                        <p>123 Travel Lane, Suite 456<br> Jakarta, 123456<br> Indonesia</p>
+                    </div>
+                </div>
+    
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+62 (123) 456-7890<br> Monday - Friday: 9:00 AM - 6:00 PM<br> Saturday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    
+    <script src="JS/script.js"></script>
 </body>
 </html>
