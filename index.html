@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <title>My Travel Agent</title>
+    <link rel="icon" type="img/png" href="Assets/travel.png"/>
+    <link rel="stylesheet" href="CSS/styles.css"/>
 </head>
 <body>
     <!-- Navigation bar -->
@@ -14,14 +15,14 @@
         </header>
 
         <section class="nav-container">
-            <a class="nav-item">Home</a>
-            <a class="nav-item">Our Package</a>
-            <a class="nav-item">Call Us</a>
+            <a class="nav-item" href="#home">Home</a>
+            <a class="nav-item" href="#packages">Our Package</a>
+            <a class="nav-item" href="#contact">Call Us</a>
         </section>
     </nav>
 
     <!-- Main content section -->
-    <main>
+    <main id="home">
         <!-- Main title section -->
         <article class="main-title">
             <header>
@@ -147,7 +148,7 @@
     </main>
     
     <!-- Sidebar with packages -->
-    <aside>
+    <aside id="packages">
         <article class="main-title">
             <header>
                 <h1>Our Packages</h1>
@@ -204,7 +205,7 @@
     </aside>
 
     <!-- Footer section -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="footer-content">
             <section class="footer-header">
                 <h1>Contact Us</h1>
